@@ -16,15 +16,14 @@
           </div>
           <div class="level-right">
             <div class="level-item">
-              <div class="tags is-marginless">
+              <div class="keywords">
                 <span
-                  class="tag is-light"
+                  class="keyword"
                   v-for="(filter, index) in filters"
                   :key="index"
                   @click="unFilter(filter)"
                 >
                   {{ filter }}
-                  <button class="delete is-small"></button>
                 </span>
               </div>
             </div>
@@ -36,9 +35,9 @@
             <figure class="image">
               <img :src="require(`./assets/images/${item.name}`)" />
             </figure>
-            <div class="tags is-marginless">
+            <div class="keywords">
               <span
-                class="tag is-light is-marginless"
+                class="keyword"
                 v-for="(tag, index) in item.tags"
                 :key="index"
                 @click="filter(tag)"
@@ -102,21 +101,24 @@ $link: $black;
 @import "~buefy/src/scss/buefy";
 
 @font-face {
-  font-family: "Quicksand";
-  src: url("./assets/fonts/Quicksand/quicksand.woff");
+  font-family: "RomanD";
+  src: url("./assets/fonts/romand.woff");
+}
+
+.modal-background {
+  background-color: transparent;
 }
 
 nav a:hover {
-  text-decoration: underline #999;
+  text-decoration: underline;
 }
 
-.tags .tag {
-  margin-bottom: 0;
-  cursor: pointer;
+.keyword:hover {
+  text-decoration: underline;
 }
 
 #app {
-  font-family: Quicksand, Helvetica, Arial, sans-serif;
+  font-family: RomanD, Helvetica, Arial, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
