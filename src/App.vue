@@ -1,5 +1,11 @@
 <template>
   <section id="app" class="hero">
+    <b-modal :active.sync="isLogoModalActive">
+      <p class="image">
+        <img src="./assets/logo-jardin.jpg" />
+      </p>
+    </b-modal>
+
     <div class="hero-body">
       <div class="container">
         <nav class="level is-mobile">
@@ -57,6 +63,7 @@ export default {
   name: "App",
   data() {
     return {
+      isLogoModalActive: true,
       items: data,
       filters: []
     };
