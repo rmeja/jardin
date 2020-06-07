@@ -70,7 +70,6 @@ export default {
   methods: {
     filter(tag) {
       if (!this.filters.includes(tag)) this.filters.push(tag);
-      console.log(this.filters);
       this.items = data.filter(item => {
         return item.tags.some(tag => this.filters.includes(tag));
       });
@@ -78,8 +77,6 @@ export default {
     unFilter(tag) {
       if (this.filters.includes(tag))
         this.filters = this.filters.filter(item => item !== tag);
-      console.log(this.filters);
-      console.log(data);
       if (this.filters.length === 0) {
         this.items = data;
       } else {
